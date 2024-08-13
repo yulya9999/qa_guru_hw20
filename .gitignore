@@ -123,6 +123,8 @@ celerybeat.pid
 
 # Environments
 .env
+.env.bstack
+.env.local_emulator
 .venv
 env/
 venv/

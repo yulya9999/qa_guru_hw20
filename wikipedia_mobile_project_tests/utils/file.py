@@ -1,4 +1,4 @@
-import utils
+from wikipedia_mobile_project_tests import utils
 from pathlib import Path
 
 

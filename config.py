@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from appium.options.android import UiAutomator2Options
-from utils import file
+from wikipedia_mobile_project_tests.utils import file
 
 
 def to_driver_options(context):

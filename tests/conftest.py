@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from selene import browser
 
 import config
-from utils import attach
+from wikipedia_mobile_project_tests.utils import attach
 
 
 def pytest_addoption(parser):
@@ -38,6 +38,6 @@ def mobile_management(context):
 
     attach.add_screenshot(browser)
     attach.add_xml(browser)
+    browser.quit()
     if context == 'bstack':
         attach.add_video(browser)
-    browser.quit()

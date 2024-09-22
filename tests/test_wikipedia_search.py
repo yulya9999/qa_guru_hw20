@@ -6,5 +6,5 @@ from wikipedia_mobile_project_tests.pages.welcome_page import welcome_screen_pag
 @allure.feature("Поиск")
 @allure.story("Успешный поиск статьи 'Python'")
 def test_search_wikipedia_success():
-    welcome_screen_page.welcome_screen_skip()
+    # welcome_screen_page.welcome_screen_skip()
     search_page.article_search("Python")

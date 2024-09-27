@@ -23,7 +23,7 @@ def to_driver_options(context):
         options.set_capability('appWaitActivity', os.getenv('APP_WAIT_ACTIVITY'))
         options.set_capability('app', os.getenv('APP'))
         # load_dotenv(dotenv_path=file.path_from_project(
-        #     '.env.bstack'))
+        #     '..env.bstack'))
         options.set_capability(
             'bstack:options', {
                 'projectName': 'Wikipedia project',

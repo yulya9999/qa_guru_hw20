@@ -1,7 +1,7 @@
 import allure
 from appium.webdriver.common.appiumby import AppiumBy
 from selene import browser, have
-from config import resource_id
+from tests.conftest import resource_id
 
 
 class WelcomePage:

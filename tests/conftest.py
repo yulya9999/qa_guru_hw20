@@ -1,10 +1,13 @@
+import os
+
 import pytest
 from appium import webdriver
 from dotenv import load_dotenv
 from selene import browser
-
 import config
 from wikipedia_mobile_project_tests.utils import attach, file
+
+resource_id = os.getenv('RESOURCE_ID')
 
 
 def pytest_addoption(parser):

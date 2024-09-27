@@ -1,10 +1,7 @@
-import os
-
 import allure
 from appium.webdriver.common.appiumby import AppiumBy
 from selene import browser, have
-
-resource_id = os.getenv('RESOURCE_ID')
+from config import resource_id
 
 
 class WelcomePage:

@@ -1,7 +1,8 @@
 import os
-from dotenv import load_dotenv
 from appium.options.android import UiAutomator2Options
 from wikipedia_mobile_project_tests.utils import file
+
+resource_id = os.getenv('RESOURCE_ID')
 
 
 def to_driver_options(context):

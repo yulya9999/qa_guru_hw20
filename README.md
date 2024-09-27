@@ -35,7 +35,8 @@ https://github.com/yulya9999/wikipedia-mobile-project-tests.git
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-pytest .
+pytest --context=local_emulator  # запуск теста в контексте local_emulator
+pytest --context=bstack          # запуск теста в контексте bstack
 ```
 
 </details>

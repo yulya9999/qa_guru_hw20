@@ -1,5 +1,6 @@
 import allure
 import pytest
+
 from wikipedia_mobile_project_tests.pages.search_page import search_page
 from wikipedia_mobile_project_tests.pages.welcome_page import welcome_screen_page
 

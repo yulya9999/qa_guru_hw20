@@ -68,7 +68,8 @@ allure serve test/allure-results/
 
 </details>
 
-3. Для получения отчета о прохождении тестов в [Allure](https://jenkins.autotests.cloud/job/wikipedia-mobile-project-tests/5/allure/), следует нажать на
+3. Для получения отчета о прохождении тестов
+   в [Allure](https://jenkins.autotests.cloud/job/wikipedia-mobile-project-tests/5/allure/), следует нажать на
    иконку<img src="/resources/images/allure-icon.png" title="allure" alt="allure" width="20" height="20"/>
 
 - ***Пример отчета в Allure***

@@ -1,8 +1,8 @@
+import os
+
 import allure
 import requests
-import os
 from dotenv import load_dotenv
-
 
 load_dotenv()
 user_name = os.getenv("USER_NAME")

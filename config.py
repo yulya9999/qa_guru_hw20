@@ -1,5 +1,7 @@
 import os
+
 from appium.options.android import UiAutomator2Options
+
 from wikipedia_mobile_project_tests.utils import file
 
 
@@ -34,4 +36,3 @@ def to_driver_options(context):
         )
 
     return options
-

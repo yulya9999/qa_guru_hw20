@@ -32,7 +32,7 @@ class WelcomePage:
             browser.element((AppiumBy.ID, f"{resource_id}/fragment_onboarding_forward_button")).click()
         return self
 
-    def click_continue_on_four_page(self):
+    def click_accept_on_four_page(self):
         with allure.step('Нажатие кнопки "Get started" на четвертой странице'):
             browser.element((AppiumBy.ID, f"{resource_id}/primaryTextView")).should(have.text('Data & Privacy'))
             browser.element((AppiumBy.ID, f"{resource_id}/fragment_onboarding_done_button")).click()
@@ -42,7 +42,7 @@ class WelcomePage:
         self.click_continue_on_first_page()
         self.click_continue_on_second_page()
         self.click_continue_on_third_page()
-        self.click_continue_on_four_page()
+        self.click_accept_on_four_page()
         return self
 
 

@@ -7,4 +7,5 @@ from wikipedia_mobile_project_tests.pages.welcome_page import welcome_screen_pag
 @allure.story("Проверка прохода по страницам")
 def test_onboarding():
     welcome_screen_page.skip_onboarding()
+    welcome_screen_page.accept_eula()
     welcome_screen_page.check_text_welcome_page()

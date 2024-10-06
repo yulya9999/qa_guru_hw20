@@ -47,4 +47,5 @@ def mobile_management(context):
 
     attach.add_screenshot(browser)
     attach.add_xml(browser)
+    attach.add_video(browser)
     browser.quit()

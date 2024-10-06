@@ -12,8 +12,9 @@ class WelcomePage:
         return self
 
     def skip_onboarding(self):
-        for _ in range(3):
-            browser.element((AppiumBy.ID, f"{resource_id}/fragment_onboarding_forward_button")).click()
+        with allure.step('Нажатие кнопки "Continue" на страницах диалогового окна'):
+            for _ in range(3):
+                browser.element((AppiumBy.ID, f"{resource_id}/fragment_onboarding_forward_button")).click()
         return self
 
     def accept_eula(self):

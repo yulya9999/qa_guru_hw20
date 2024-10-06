@@ -17,7 +17,7 @@ class WelcomePage:
                 browser.element((AppiumBy.ID, f"{resource_id}/fragment_onboarding_forward_button")).click()
         return self
 
-    def accept_eula(self):
+    def click_button_get_started(self):
         with allure.step('Нажатие кнопки "Get started"'):
             browser.element((AppiumBy.ID, f"{resource_id}/fragment_onboarding_done_button")).click()
         return self

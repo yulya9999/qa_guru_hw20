@@ -84,4 +84,6 @@ allure serve test/allure-results/
 
 </details>
 
+### Пример видеоотчета о прохождении тестов
 
+<img src="resources/videos/video-test.gif" alt="gif example">

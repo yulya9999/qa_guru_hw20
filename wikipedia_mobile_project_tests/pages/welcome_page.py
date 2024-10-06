@@ -9,7 +9,6 @@ class WelcomePage:
     def welcome_screen_skip(self):
         with allure.step('Пропустить приветственное окно'):
             browser.element((AppiumBy.ID, f"{resource_id}/fragment_onboarding_skip_button")).click()
-
         return self
 
     def click_continue_on_first_page(self):
@@ -36,6 +35,12 @@ class WelcomePage:
         with allure.step('Нажатие кнопки "Get started" на четвертой странице'):
             browser.element((AppiumBy.ID, f"{resource_id}/primaryTextView")).should(have.text('Data & Privacy'))
             browser.element((AppiumBy.ID, f"{resource_id}/fragment_onboarding_done_button")).click()
+        return self
+
+    def check_text_welcome_page(self):
+        with allure.step('Проверка перехода на главный экран'):
+            (browser.element((AppiumBy.ID, f"{resource_id}/view_announcement_text"))
+             .should(have.text('Customize your Explore feed')))
         return self
 
     def skip_onboarding(self):

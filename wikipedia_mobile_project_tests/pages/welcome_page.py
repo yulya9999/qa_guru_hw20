@@ -11,43 +11,46 @@ class WelcomePage:
             browser.element((AppiumBy.ID, f"{resource_id}/fragment_onboarding_skip_button")).click()
         return self
 
-    def click_continue_on_first_page(self):
-        with allure.step('Нажатие кнопки "Continue" на первой странице'):
-            browser.all((AppiumBy.ID, f'{resource_id}/option_label')).first.should(have.text('English'))
-            browser.element((AppiumBy.ID, f"{resource_id}/fragment_onboarding_forward_button")).click()
-        return self
-
-    def click_continue_on_second_page(self):
-        with allure.step('Нажатие кнопки "Continue" на второй странице'):
-            browser.element((AppiumBy.ID, f'{resource_id}/primaryTextView')).should(
-                have.text('New ways to explore'))
-            browser.element((AppiumBy.ID, f"{resource_id}/fragment_onboarding_forward_button")).click()
-        return self
-
-    def click_continue_on_third_page(self):
-        with allure.step('Нажатие кнопки "Continue" на третьей странице'):
-            browser.element((AppiumBy.ID, f"{resource_id}/primaryTextView")).should(
-                have.text('Reading lists with sync'))
-            browser.element((AppiumBy.ID, f"{resource_id}/fragment_onboarding_forward_button")).click()
-        return self
-
-    def click_accept_on_four_page(self):
-        with allure.step('Нажатие кнопки "Get started" на четвертой странице'):
-            browser.element((AppiumBy.ID, f"{resource_id}/primaryTextView")).should(have.text('Data & Privacy'))
-            browser.element((AppiumBy.ID, f"{resource_id}/fragment_onboarding_done_button")).click()
-        return self
-
     def check_text_welcome_page(self):
         with allure.step('Проверка перехода на главный экран'):
             (browser.element((AppiumBy.ID, f"{resource_id}/view_announcement_text"))
              .should(have.text('Customize your Explore feed')))
         return self
 
+    def click_continue_on_dialog_box(self):
+        with allure.step('Нажатие кнопки "Continue" в диалоговом окне'):
+            browser.element((AppiumBy.ID, f"{resource_id}/fragment_onboarding_forward_button")).click()
+        return self
+
+    def choose_language(self, language):
+        with allure.step('Выбор языка на первой странице диалогового окна'):
+            browser.all((AppiumBy.ID, f'{resource_id}/option_label')).first.should(have.text(f'{language}'))
+        return self
+
+    def checking_text_on_dialog_pages(self, text):
+        with allure.step('Проверка текста на странице диалогового окна'):
+            browser.element((AppiumBy.ID, f'{resource_id}/primaryTextView')).should(
+                have.text(f'{text}'))
+        return self
+
+    def accept_eula(self):
+        with allure.step('Нажатие кнопки "Accept"'):
+            browser.element((AppiumBy.ID, f"{resource_id}/acceptButton")).click()
+        return self
+
     def skip_onboarding(self):
-        self.click_continue_on_first_page()
-        self.click_continue_on_second_page()
-        self.click_continue_on_third_page()
-        self.click_accept_on_four_page()
+        with allure.step('Первая страница'):
+            self.choose_language('English')
+            self.click_continue_on_dialog_box()
+        with allure.step('Вторая страница'):
+            self.checking_text_on_dialog_pages('New ways to explore')
+            self.click_continue_on_dialog_box()
+        with allure.step('Третья страница'):
+            self.checking_text_on_dialog_pages('Reading lists with sync')
+            self.click_continue_on_dialog_box()
+        with allure.step('Четвертая страница'):
+            self.checking_text_on_dialog_pages('Data & Privacy')
+            self.accept_eula()
         return self
 
 

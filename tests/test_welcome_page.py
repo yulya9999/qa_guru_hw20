@@ -8,4 +8,3 @@ from wikipedia_mobile_project_tests.pages.welcome_page import welcome_screen_pag
 def test_onboarding():
     welcome_screen_page.skip_onboarding()
     welcome_screen_page.check_text_welcome_page()
-

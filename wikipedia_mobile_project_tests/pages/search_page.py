@@ -18,11 +18,10 @@ class SearchPage:
             results.first.should(have.text(article))
         return self
 
-    def click_on_article(self):
+    def click_on_first_article(self):
         with step('Клик по первой статье'):
             results = browser.all((AppiumBy.ID, f'{resource_id}/page_list_item_title'))
             results.first.click()
-
         return self
 
 

@@ -6,12 +6,12 @@ from tests.conftest import resource_id
 
 
 class WelcomePage:
-    def welcome_screen_skip(self):
+    def skip_onboarding(self):
         with allure.step('Пропустить приветственное окно'):
             browser.element((AppiumBy.ID, f"{resource_id}/fragment_onboarding_skip_button")).click()
         return self
 
-    def skip_onboarding(self):
+    def pass_onboarding(self):
         with allure.step('Нажатие кнопки "Continue" на страницах диалогового окна'):
             for _ in range(3):
                 browser.element((AppiumBy.ID, f"{resource_id}/fragment_onboarding_forward_button")).click()

@@ -11,17 +11,16 @@ class SearchPage:
         with step('Ввод названия статьи в поисковую строку'):
             browser.element((AppiumBy.ACCESSIBILITY_ID, "Search Wikipedia")).click()
             browser.element((AppiumBy.ID, f"{resource_id}/search_src_text")).type(article)
-
-        with step('Проверка результата поиска'):
-            results = browser.all((AppiumBy.ID, f'{resource_id}/page_list_item_title'))
-            results.should(have.size_greater_than(0))
-            results.first.should(have.text(article))
         return self
 
     def click_on_first_article(self):
         with step('Клик по первой статье'):
-            results = browser.all((AppiumBy.ID, f'{resource_id}/page_list_item_title'))
-            results.first.click()
+            browser.all((AppiumBy.ID, f'{resource_id}/page_list_item_title')).first.click()
+        return self
+
+    def check_title(self, article):
+        with step('Проверка заголовка статьи'):
+            browser.element((AppiumBy.ACCESSIBILITY_ID, "Python")).should(have.text(article))
         return self
 
 

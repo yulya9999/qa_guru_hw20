@@ -13,4 +13,4 @@ def test_search_wikipedia_success(article):
     welcome_screen_page.check_text_welcome_page()
     search_page.article_search(article)
     search_page.click_on_first_article()
-    search_page.check_title()
+    search_page.check_title(article)

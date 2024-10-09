@@ -20,7 +20,7 @@ class SearchPage:
 
     def check_title(self, article):
         with step('Проверка заголовка статьи'):
-            browser.element((AppiumBy.ACCESSIBILITY_ID, "Python")).should(have.text(article))
+            browser.all((AppiumBy.CLASS_NAME, "android.widget.TextView")).first.should(have.text(article))
         return self
 
 
